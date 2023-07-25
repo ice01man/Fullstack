@@ -13,8 +13,8 @@ else{
     if(control === 'string' && eleccion == 'a' || eleccion == 'b' || eleccion =='c'){
         switch (eleccion) {
             case "a":
-                console.log('Estamos dentro del IF con la opcion:' + eleccion)
-                cantidadDeGatos = prompt("ingrese la cantidad de Gatos")
+                console.log('Elegiste la opcion:' + eleccion)
+                cantidadDeGatos = prompt("ingrese la cantidad de Gatos del 1 al 10")
                 /*😺 😸 😹 🐈 🐾 ⬛ */
                 if (cantidadDeGatos >=1 && cantidadDeGatos <=10 ){
                     g = ['😺','😸','😹','😺','😸','😹','😺','😸','😹','😺']
@@ -23,11 +23,11 @@ else{
                         console.log('Gato #',i , g[i-1])
                     }
                 } else{
-                    console.log('Debe ingresar Valores del 1 al 10')
+                    console.error(['Debe ingresar Valores del 1 al 10']) 
                 }
             break;
             case "b":
-                console.log('Estamos dentro del IF con la opcion:' + eleccion)
+                console.log('Elegiste la opcion:' + eleccion)
                 cantidadDeGatos = parseInt(prompt('Ingrese la cantidad de Gatos'))
                 cantidadDePasos = parseInt(prompt('Ingrese la Cantidad de Pasos'))
                 if(cantidadDeGatos>=1 && cantidadDePasos>=1 ){
@@ -40,20 +40,36 @@ else{
                         console.log('Gato #',p , g[0] ,xc ) 
                     }    
                  }else{
-                    console.log('Tiene que ingresar un Numero mayor a 1')
+                    console.error('Tiene que ingresar un Numero mayor a 1')
                 }
                 break;
             case "c":
-                console.log('Estamos dentro del IF con la opcion:' + eleccion)
-
-
-
+                console.log('Elegiste la opcion:' + eleccion)
+                cantidadDeGatos = parseInt(prompt('Ingrese la cantidad de Gatos'))
+                cantidadDePasos = parseInt(prompt('Ingrese la Cantidad de Pasos'))
+                if(cantidadDeGatos>=1 && cantidadDePasos>=1 ){
+                    g=['🐈','🐾','⬛']
+                    xc = ''
+                    for( i =1 ; i <=cantidadDePasos ; i++){
+                            xc = xc +g[1]
+                    }
+                    for(p =1; p<=cantidadDeGatos; p++ ){
+                        if(p%2 == 0){
+                            console.log('Gato #',p , g[0] , g[2],xc ) 
+                        }else{
+                           /*  xc = xc + g[1] */
+                           console.log('Gato #',p , g[0] ,xc ) 
+                        }
+                    }    
+                    } else{
+                    console.error('Tiene que ingresar un Numero mayor a 1')
+                    }
 
                 break;
         }
     }
     else{
-        console.log("tiene que ingresar A, B o C")
+        console.console.error("tiene que ingresar A, B o C")
         titulo2.innerHTML = "Tiene que Elegir las opciones informadas <br><br> Opciones A, B o C"  
     }
 
